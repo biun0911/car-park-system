@@ -76,7 +76,7 @@ After reading the task requirements, you should be able to identify the classes,
 | Class Name | Attributes                                    | Methods                                              |
 | ---------- |-----------------------------------------------|------------------------------------------------------|
 | `CarPark`    | location, capacity, plates, sensors, displays | register(), add_car(), remove_car, update_displays() |
-| `Sensor`     | id, is_active, car_park                       | update_car_park(), detect_car()                      |
+| `Sensor`     | id, is_active, car_park                       | update_car_park(), detect_vehicle()                   |
 | `Display`    | id, car_park, message, is_on                  | update_status(), show_message()                      |
 
 **Additional evidencing:**
@@ -371,7 +371,7 @@ Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which clas
 >Q. Which class is responsible for the number of available bays (and why)?  
 > CarPark class, because it knows the capacity and the list of plates, so it can calculate the number of available bays.  
 >Q. Which class is responsible for the current temperature (and why)?
-> Sensor class, because if the system includes environment sensor, it is likely to have a TemperatureSensor that can provide the current temperature.   
+> Sensor class, because sensor detect environmental data like current temperature.
 >Q. Which class is responsible for the time (and why)?  
 > Display class, because it shows information to drivers, include the time when they enter or exit the car park.
 --------
@@ -444,26 +444,28 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+
+![Added methods to the car park class](images/methods_to_car_park.png)
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_
->      `Answer here...`
+>      `CarPark class, because it knows the capacity and the list of plates, so it can calculate the number of available bays.`
 >    - _The current temperature_
->      `Answer here...`
+>      `Sensor class, because sensor detect environmental data like current temperature. `
 >    - _The time_
->      `Answer here...`
+>      `Display class, because it shows information to drivers, include the time when they enter or exit the car par`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
->
+>    `An attribute is a variable that belongs to an object and can be accessed directly. A property is s special kind of attribute that uses the @property decorator to define getter, setter, and deleter methods to control access.`    
+>    `resource: https://www.geeksforgeeks.org/difference-between-attributes-and-properties-in-python/ `
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `The reason is that we can hold a group of information such as available bays, current temperature and time`  
+>    `Advantage: flexiable, easy to add or remove the field. The display can access the value by key`  
+>    `Disadvantage: Keys need to be typed carefully because a misspelled key will make it difficult to access to the data. `
 
 #### Add a detect vehicle method to the Sensor class
 
