@@ -2,6 +2,8 @@ from sensor import Sensor
 from display import Display
 from pathlib import Path
 from datetime import datetime
+import json
+
 
 
 class CarPark:
@@ -40,6 +42,12 @@ class CarPark:
         self.update_displays()
         self._log_car_activity(plate, "removed")
 
+    def write_config(self):
+        with open("config.json", "w") as f:
+            json.dump({"location}": self.location,
+                      "capacity": self.capacity,
+                       "log_file": str(self.log_file)}, f)
+
     @property
     def available_bays(self):
         available = self.capacity - len(self.plates)
@@ -49,3 +57,10 @@ class CarPark:
         data = {"available_bays": self.available_bays, "temperature": 25}
         for display in self.displays:
             display.update(data)
+
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(config["location"], config["capacity"], log_file=config["log_file"])
