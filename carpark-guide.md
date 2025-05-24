@@ -73,11 +73,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes                            | Methods                                                        |
-| ---------- |---------------------------------------|----------------------------------------------------------------|
-| `CarPark`    | location, capacity, plates, sensors, displays | car_entry(), car_exit(), is_full(), update_display() |
-| `Sensor`     | id, is_active, car_park               | detect_entry(), detect_exit()                                  |
-| `Display`    | location, message                     | update_status(), show_message()                                |
+| Class Name | Attributes                                    | Methods                                              |
+| ---------- |-----------------------------------------------|------------------------------------------------------|
+| `CarPark`    | location, capacity, plates, sensors, displays | register(), add_car(), remove_car, update_displays() |
+| `Sensor`     | id, is_active, car_park                       | update_car_park(), detect_car()                      |
+| `Display`    | id, car_park, message, is_on                  | update_status(), show_message()                      |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -211,7 +211,7 @@ Ensure that you have completed the previous steps and created the appropriate ta
 s1
 s2
 ```
-
+![Added stubs for classes](images/git_tags.png)
 ### Relate the classes
 
 Let's consider how the classes relate to each other. We can start by using a sequence diagram to illustrate class interactions. A sequence diagram shows the interactions between objects in a sequential order. The following diagram shows the interactions between the `CarPark`, `Sensor`, and `Display` classes.
