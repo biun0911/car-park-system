@@ -73,11 +73,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes                                    | Methods                                                        |
-| ---------- |-----------------------------------------------|----------------------------------------------------------------|
+| Class Name | Attributes                            | Methods                                                        |
+| ---------- |---------------------------------------|----------------------------------------------------------------|
 | `CarPark`    | location, capacity, plates, sensors, displays | car_entry(), car_exit(), is_full(), update_display() |
-| `Sensor`     | id, location                                  | detect_entry(), detect_exit()                                  |
-| `Display`    | location, message                             | update_status(), show_message()                                |
+| `Sensor`     | id, is_active, car_park               | detect_entry(), detect_exit()                                  |
+| `Display`    | location, message                     | update_status(), show_message()                                |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
