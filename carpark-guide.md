@@ -76,7 +76,7 @@ After reading the task requirements, you should be able to identify the classes,
 | Class Name | Attributes                                    | Methods                                              |
 | ---------- |-----------------------------------------------|------------------------------------------------------|
 | `CarPark`    | location, capacity, plates, sensors, displays | register(), add_car(), remove_car, update_displays() |
-| `Sensor`     | id, is_active, car_park                       | update_car_park(), detect_vehicle()                   |
+| `Sensor`     | id, is_active, car_park                       | scan_plate(), detect_vehicle(), update_car_park()    |
 | `Display`    | id, car_park, message, is_on                  | update_status(), show_message()                      |
 
 **Additional evidencing:**
