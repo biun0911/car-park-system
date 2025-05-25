@@ -73,11 +73,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes                                    | Methods                                              |
-| ---------- |-----------------------------------------------|------------------------------------------------------|
-| `CarPark`    | location, capacity, plates, sensors, displays | register(), add_car(), remove_car, update_displays() |
-| `Sensor`     | id, is_active, car_park                       | scan_plate(), detect_vehicle(), update_car_park()    |
-| `Display`    | id, car_park, message, is_on                  | update_status(), show_message()                      |
+| Class Name | Attributes                                    | Methods                                                |
+| ---------- |-----------------------------------------------|--------------------------------------------------------|
+| `CarPark`    | location, capacity, plates, sensors, displays | register(), add_car(), remove_car(), update_displays() |
+| `Sensor`     | id, is_active, car_park                       | scan_plate(), detect_vehicle(), update_car_park()      |
+| `Display`    | id, car_park, message, is_on                  | update_status(), show_message()                        |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -370,8 +370,8 @@ Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which clas
 
 >Q. Which class is responsible for the number of available bays (and why)?  
 > CarPark class, because it knows the capacity and the list of plates, so it can calculate the number of available bays.  
->Q. Which class is responsible for the current temperature (and why)?
-> Sensor class, because sensor detect environmental data like current temperature.
+>Q. Which class is responsible for the current temperature (and why)?  
+> Sensor class, because sensor detect environmental data like current temperature.  
 >Q. Which class is responsible for the time (and why)?  
 > Display class, because it shows information to drivers, include the time when they enter or exit the car park.
 --------
@@ -1089,11 +1089,11 @@ In your final submission, you must include any files you created or modified. Th
 
 4. Release your code on GitHub. You can do this by going to the releases section and selecting "Create a new release". Give the release a title ("Project Submission") and description. Then click "Publish release". Include a screenshot of the release:
 
-   ```markdown
-   ![Create a release](images/create-release.png)
 
-   ![Publish a release](images/publish-release.png)
-   ```
+   ![Create a release](images/create_release.png)
+
+   ![Publish a release](images/publish_release.png)
+
 
 5. Congratulations! You have completed the project. You can now submit the assignment via Blackboard. Take the time to reflect on your work and write any notes and observations down.
 
